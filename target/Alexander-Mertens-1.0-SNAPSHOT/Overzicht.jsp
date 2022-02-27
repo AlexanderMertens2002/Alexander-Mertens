@@ -11,9 +11,9 @@
     </h1>
 </div>
 <div>
-    <a href="index.jsp"><button class="button" >Info</button></a>
-    <a href="VoegToe.jsp"><button class="button" >Voeg Toe</button></a>
-    <a href="Overzicht.jsp"><button class="button" >Overzicht</button></a>
+    <a href="index.jsp"><button class="button button1" >Info</button></a>
+    <a href="VoegToe.jsp"><button class="button button1" >Voeg Toe</button></a>
+    <a href="Overzicht.jsp"><button class="button button1" >Overzicht</button></a>
 </div>
 <div>
     <table class="center">
