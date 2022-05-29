@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
     <link rel="stylesheet" href="stylesheet.css">
@@ -6,29 +7,70 @@
     <title>Meldpunt Verloren Voorwerpen</title>
 </head>
 <body>
-<div>
+<header>
     <h1><%= "Meldpunt verloren voorwerpen" %>
     </h1>
-</div>
-<div>
-    <a href="index.jsp"><button class="button button1" >Info</button></a>
-    <a href="VoegToe.jsp"><button class="button button1" >Voeg Toe</button></a>
-    <a href="Overzicht.jsp"><button class="button button1" >Overzicht</button></a>
-</div>
-<div>
-    <form>
-        <label for="Beschrijving">Beschrijving:</label><br>
-        <input type="text" id="Beschrijving" name="Beschrijving" value=""><br>
-        <label for="Datum">Datum:</label><br>
-        <input type="date" id="Datum" name="Datum" value=""><br><br>
-        <label for="Plaats">Plaats:</label><br>
-        <input type="text" id="Plaats" name="Plaats" value=""><br><br>
-        <label for="Telefoonnr">Telefoonnr:</label><br>
-        <input type="tel" id="Telefoonnr" name="telefoonnr" value=""><br><br>
-        <label for="Email">Email:</label><br>
-        <input type="email" id="Email" name="Email" value=""><br><br>
-        <input type="submit" value="Submit">
+
+    <nav>
+        <ul>
+            <li><a href="Controller?command=home">Info</a></li>
+            <li><a href="Controller?command=VoegToe">Voeg Toe</a></li>
+            <li><a href="Controller?command=Overzicht">Overzicht</a></li>
+            <li><a href="Controller?command=find">find</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="form" method="POST" action="Controller?command=add" novalidate>
+
+        <p class="form-group">
+            <label class="control-label" for="Beschrijving">Beschrijving:</label>
+            <input id="Beschrijving" name="Beschrijving" type="text"
+                   value="${BeschrijvingVorige}" class="" required>
+        </p>
+
+        <p class="form-group">
+            <label class="control-label" for="Plaats">Plaats:</label>
+            <input id="Plaats" name="Plaats" type="text"
+                   value="${PlaatsVorige}" class="" required>
+        </p>
+
+        <p class="form-group">
+            <label class="control-label" for="Email">Email:</label>
+            <input id="Email" name="Email" type="text"
+                   value="${EmailVorige}" class="" required>
+        </p>
+
+        <p class="form-group">
+            <label for="Jaar">Jaar:</label>
+            <input
+                    id="Jaar" name="Jaar" type="number"
+                    value="${JaarVorige}" class="" required>
+        </p>
+
+        <p class="form-group">
+            <label for="Maand">Maand:</label>
+            <input
+                    id="Maand" name="Maand" type="number"
+                    value="${MaandVorige}" class="" required>
+        </p>
+
+        <p class="form-group">
+            <label for="Dag">Dag:</label>
+            <input
+                    id="Dag" name="Dag" type="number"
+                    value="${DagVorige}" class="" required>
+        </p>
+        <p class="form-group">
+            <label for="Telefoonnr">Telefoonnr:</label>
+            <input
+                    id="Telefoonnr" name="Telefoonnr" type="number"
+                    value="${TelefoonnrVorige}" class="" required>
+        </p>
+        <p>
+            <input id="submit" type="submit" value="Verstuur">
+        </p>
     </form>
-</div>
+</main>
 </body>
 </html>

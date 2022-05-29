@@ -1,4 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Alexander
+  Date: 28/05/2022
+  Time: 11:47
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -20,26 +27,10 @@
         </ul>
     </nav>
 </header>
+
 <main>
     <article>
-        <p>
-            Ben je iets verloren ?
-            Meld het dan hier bij de MVV zodat de eerlijke vinder het aan jouw terug kan bezorgen.
-        </p>
-        <p>
-            <%if (request.getAttribute("zoekgeschiedenis") == null){ %>
-            U zocht nog niet op
-            <% }
-            else{ %>
-                ${zoekgeschiedenis}
-            <%
-                }
-            %>
-        </p>
-        <p>
-            het langst vermiste voorwerp is ${oudeste}
-        </p>
-
+        <p>dit is het voorwerp waar je naar zocht: ${VerlorenVoorwerp.toonBeschrijving()}</p>
     </article>
 </main>
 </body>
